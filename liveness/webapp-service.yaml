@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2022-04-01T02:03:58Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:externalTrafficPolicy: {}
+        f:ports:
+          .: {}
+          k:{"port":8080,"protocol":"TCP"}:
+            .: {}
+            f:nodePort: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+        f:selector:
+          .: {}
+          f:name: {}
+        f:sessionAffinity: {}
+        f:type: {}
+    manager: python-requests
+    operation: Update
+    time: "2022-04-01T02:03:58Z"
+  name: webapp-service
+  namespace: default
+  resourceVersion: "1020"
+  uid: 9c0e8179-4e1d-4192-a184-a1df5b57d087
+spec:
+  clusterIP: 10.97.34.64
+  clusterIPs:
+  - 10.97.34.64
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 30080
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    name: simple-webapp
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
